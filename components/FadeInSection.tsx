@@ -14,7 +14,7 @@ export default function FadeInSection({ children, className = '' }: FadeInSectio
   const sectionRef = useRef<HTMLDivElement>(null); // <--- Arreglo 1
 
   // 2. Usamos nuestro hook para saber si es visible
-  const isVisible = useIntersectionObserver(sectionRef, { // <--- Arreglo 2 (era "sectionRef")
+  const isVisible = useIntersectionObserver(sectionRef as any, { // <--- Arreglo 2 (era "sectionRef")
     threshold: 0.1, // 10% del elemento debe estar visible
     freezeOnceVisible: true, // La animación solo ocurre una vez
   }); // <--- Arreglo 3 (Aquí faltaba el ')' )
