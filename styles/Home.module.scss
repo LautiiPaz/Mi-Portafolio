@@ -1,0 +1,244 @@
+@import 'variables'; // Importamos las variables
+
+/* Estilos de la Sección Hero */
+.heroSection {
+  display: flex;
+  flex-direction: column; // Apilado en móviles
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: $dark-bg;
+  border-radius: 12px;
+  margin-top: 2rem;
+
+  .heroContent {
+    .heroTitle {
+      font-size: 2.5rem;
+      font-weight: 700;
+      .highlight {
+        color: $primary-color;
+      }
+    }
+    .heroSubtitle {
+      font-size: 1.2rem;
+      color: $text-light;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .heroImageContainer {
+    .profileImage {
+      border-radius: 50%; // Imagen de perfil redonda
+      border: 5px solid white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
+    }
+  }
+
+  /* Diseño para pantallas más grandes (responsive) */
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row; // Lado a lado en desktop
+    text-align: left;
+    justify-content: space-between;
+    padding: 6rem 3rem;
+
+    .heroContent {
+      max-width: 60%;
+    }
+
+    .heroImageContainer {
+      .profileImage {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+/* Estilos de las otras secciones */
+.aboutSection, .skillsSection {
+  padding: 4rem 1rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid $primary-color;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  .skillBadge {
+    background-color: $dark-bg;
+    color: $primary-color;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: $font-secondary;
+    font-weight: 500;
+  }
+}
+/* Estilos para la Sección de Proyectos */
+.projectsSection {
+  padding: 4rem 1rem;
+  background-color: $dark-bg; // Fondo gris claro para diferenciar
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid $primary-color;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr; // 1 columna en móviles
+  gap: 2rem;
+  text-align: left; // Reseteamos el texto de las tarjetas
+
+  /* 2 columnas en tablets */
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 3 columnas en desktop */
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Estilos para la Sección de Servicios */
+.servicesSection {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: $light-bg; // Fondo blanco
+
+  h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid $primary-color;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr; // 1 columna en móviles
+  gap: 2rem;
+  text-align: left;
+
+  /* 2 columnas en tablets */
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 3 columnas en desktop */
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tarjeta individual de servicio */
+.serviceCard {
+  background-color: $dark-bg; // Usamos el gris claro
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid transparent; // Borde sutil
+  transition: transform 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $primary-color; // Borde de color al pasar el mouse
+  }
+
+  .serviceTitle {
+    font-size: 1.25rem;
+    font-family: $font-secondary;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+  }
+
+  .serviceDescription {
+    font-size: 0.9rem;
+    color: $text-light;
+    line-height: 1.5;
+  }
+}
+/* Estilos para la Sección de Contacto */
+.contactSection {
+  padding: 4rem 1rem;
+  background-color: $light-bg; // Fondo blanco
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid $primary-color;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .contactIntro {
+    font-size: 1.1rem;
+    color: $text-light;
+    max-width: 600px;
+    margin: 0 auto 3rem auto; // Centrado y con margen
+  }
+}
+
+.contactForm {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: $font-secondary;
+  font-weight: 500;
+  color: $text-color;
+}
+
+// Estilo unificado para inputs y textarea
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  background-color: white;
+  font-family: $font-primary;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba($primary-color, 0.3);
+  }
+}
+
+.formTextarea {
+  min-height: 150px;
+  resize: vertical; // Permite al usuario ajustar la altura
+}
+
+.formButton {
+  // Reutilizamos la clase global .btn, pero podemos centrarla
+  display: block;
+  margin: 0 auto; // Centra el botón
+  width: 200px;
+}

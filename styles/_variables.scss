@@ -1,0 +1,15 @@
+/* Fuentes (las vinculamos a las variables CSS de layout.tsx) */
+$font-primary: var(--font-montserrat), sans-serif;
+$font-secondary: var(--font-roboto), sans-serif;
+
+/* Paleta de Colores (Ejemplo) */
+$primary-color: #007bff;     // Azul vibrante para botones y enlaces
+$secondary-color: #6c757d;  // Gris para botones secundarios
+$text-color: #212529;       // Texto principal (casi negro)
+$text-light: #5a5a5a;       // Texto secundario (más claro)
+$light-bg: #ffffff;         // Fondo principal (blanco)
+$dark-bg: #f8f9fa;         // Fondo para secciones (gris claro)
+
+/* Breakpoints (para diseño responsivo) */
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;

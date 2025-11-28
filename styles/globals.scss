@@ -1,0 +1,93 @@
+@import 'variables'; // Importamos nuestras variables
+
+/* Reseteo básico de CSS */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $light-bg;
+  color: $text-color;
+  font-family: $font-primary; // Fuente principal por defecto
+}
+
+main {
+  // Asegura que el contenido principal no esté pegado a los bordes
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary; // Fuente secundaria para títulos
+  margin-bottom: 1rem;
+}
+
+p {
+  color: $text-light;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Clases de Botones Globales (que usamos en page.tsx) */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-decoration: none !important; // Quitar subrayado de enlaces
+  margin: 0.5rem;
+
+  &-primary {
+    background-color: $primary-color;
+    color: white;
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  &-secondary {
+    background-color: transparent;
+    color: $primary-color;
+    border-color: $primary-color;
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+/*
+  Animación #1: Aparición suave al hacer scroll
+*/
+.fadeInSection {
+  opacity: 0; // Por defecto, está oculto
+  transform: translateY(20px); // Ligeramente desplazado hacia abajo
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  
+  // Cuando es visible, se muestra
+  &.isVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
