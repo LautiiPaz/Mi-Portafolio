@@ -24,7 +24,7 @@ const portfolioProjects = [
     title: 'Corporate Landing Page',
     description: 'A responsive and fast landing page for a tech startup, focused on performance (Lighthouse score 95+) and SEO.',
     imageUrl: '/project-landing.jpg', // <-- añadir esta imagen en /public
-    projectUrl: '#',
+    projectUrl: 'https://zero-club-business.netlify.app/',
     tags: ['React', 'Gatsby', 'Styled-Components'],
   },
   {
